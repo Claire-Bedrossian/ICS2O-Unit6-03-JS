@@ -13,10 +13,9 @@ if (navigator.serviceWorker) {
   })
 }
 
-
 /**
  * Get API info.
-*/
+ */
 // code from: https://www.youtube.com/watch?v=670f71LTWpM
 
 const getImage = async (URLAddress) => {
@@ -25,16 +24,22 @@ const getImage = async (URLAddress) => {
     const jsonData = await result.json()
     console.log(jsonData)
     document.getElementById("api-image").innerHTML =
-    '<img src="' + 
-      jsonData.weather_icon + 
+      '<img src="' +
+      jsonData.weather_icon +
       '" alt="API image" class="center" ' +
-      '>'
+      ">"
     if (jsonData.weather != "none") {
       document.getElementById("temperature").innerHTML =
-      "<p>temperature: " + '<a href="' + jsonData.weather_description + '">' + jsonData.weather_description  + "</a>"
-  } else {
-    document.getElementById("temperature").innerHTML = "<p>Temperature: unknown</p>"
-  }
+        "<p>temperature: " +
+        '<a href="' +
+        jsonData.weather_description +
+        '">' +
+        jsonData.weather_description +
+        "</a>"
+    } else {
+      document.getElementById("temperature").innerHTML =
+        "<p>Temperature: unknown</p>"
+    }
   } catch (err) {
     console.log(err)
   }
