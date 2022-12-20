@@ -24,9 +24,9 @@ const getWeather = async (URLAddress) => {
     const jsonData = await result.json()
     console.log(jsonData.weather[0].icon)
     document.getElementById("api-image").innerHTML =
-      '<img src="' +
+      '<img src="http://openweathermap.org/img/wn/' +
       jsonData.weather[0].icon +
-      '" alt="API image" class="center" ' +
+      '@2x.png" alt="API image" class="center" ' +
       ">"
     if (jsonData.weather != "none") {
       document.getElementById("temperature").innerHTML =
