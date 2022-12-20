@@ -20,6 +20,7 @@ if (navigator.serviceWorker) {
 
 const getWeather = async (URLAddress) => {
   try {
+    let tempInKelvin = 0
     const result = await fetch(URLAddress)
     const jsonData = await result.json()
     console.log(jsonData.weather[0].icon)
@@ -28,13 +29,17 @@ const getWeather = async (URLAddress) => {
       jsonData.weather[0].icon +
       '@2x.png" alt="API image" class="center" ' +
       ">"
-    if (jsonData.weather != "none") {
+
+    tempInKelvin = jsonData.main.temp
+    console.log(tempInKelvin)
+
+    if (jsonData.main.temp != "none") {
       document.getElementById("temperature").innerHTML =
         "<p>temperature: " +
         '<a href="' +
-        jsonData.weather_description +
+        jsonData.main.temp +
         '">' +
-        jsonData.weather_description +
+        jsonData.main.temp +
         "</a>"
     } else {
       document.getElementById("temperature").innerHTML =
