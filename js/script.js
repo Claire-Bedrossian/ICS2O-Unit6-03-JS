@@ -18,14 +18,14 @@ if (navigator.serviceWorker) {
  */
 // code from: https://www.youtube.com/watch?v=670f71LTWpM
 
-const getImage = async ("https://api.openweathermap.org/data/2.5/weather?lat=45.4211435&lon=-75.6900574&appid=fe1d80e1e103cff8c6afd190cad23fa5") => {
+const getWeather = async (URLAddress) => {
   try {
-    const result = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=45.4211435&lon=-75.6900574&appid=fe1d80e1e103cff8c6afd190cad23fa5")
+    const result = await fetch(URLAddress)
     const jsonData = await result.json()
-    console.log(jsonData)
+    console.log(jsonData.weather[0].icon)
     document.getElementById("api-image").innerHTML =
       '<img src="' +
-      jsonData.weather_icon +
+      jsonData.weather[0].icon +
       '" alt="API image" class="center" ' +
       ">"
     if (jsonData.weather != "none") {
@@ -45,4 +45,4 @@ const getImage = async ("https://api.openweathermap.org/data/2.5/weather?lat=45.
   }
 }
 
-getImage("https://api.openweathermap.org/data/2.5/weather?lat=45.4211435&lon=-75.6900574&appid=fe1d80e1e103cff8c6afd190cad23fa5")
+getWeather("https://api.openweathermap.org/data/2.5/weather?lat=45.4211435&lon=-75.6900574&appid=fe1d80e1e103cff8c6afd190cad23fa5") 
