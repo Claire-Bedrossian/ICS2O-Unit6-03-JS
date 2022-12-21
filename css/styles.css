@@ -37,3 +37,7 @@ img {
   float: right;
   margin-right: 15px;
 }
+
+div {
+  margin: auto;
+}
