@@ -50,7 +50,6 @@ const getWeather = async (URLAddress) => {
       document.getElementById("description").innerHTML =
         "<p>Description: unknown</p>"
     }
-
   } catch (err) {
     console.log(err)
   }
