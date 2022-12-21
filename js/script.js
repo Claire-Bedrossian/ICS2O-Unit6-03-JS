@@ -42,6 +42,15 @@ const getWeather = async (URLAddress) => {
       document.getElementById("temperature").innerHTML =
         "<p>Temperature: unknown</p>"
     }
+
+    if (jsonData.weather.main != "none") {
+      document.getElementById("description").innerHTML =
+        "<p> Description: " + jsonData.weather.main + "</p>"
+    } else {
+      document.getElementById("description").innerHTML =
+        "<p>Description: unknown</p>"
+    }
+
   } catch (err) {
     console.log(err)
   }
