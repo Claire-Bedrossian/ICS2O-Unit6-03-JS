@@ -37,7 +37,7 @@ const getWeather = async (URLAddress) => {
 
     if (jsonData.main.temp != "none") {
       document.getElementById("temperature").innerHTML =
-        "<p>temperature: " + tempInCelsius + "°C</p>"
+        "<p>temperature: " + tempInCelsius.toFixed(0) + "°C</p>"
     } else {
       document.getElementById("temperature").innerHTML =
         "<p>Temperature: unknown</p>"
