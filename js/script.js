@@ -42,7 +42,6 @@ const getWeather = async (URLAddress) => {
       document.getElementById("temperature").innerHTML =
         "<p>Temperature: unknown</p>"
     }
-
   } catch (err) {
     console.log(err)
   }
