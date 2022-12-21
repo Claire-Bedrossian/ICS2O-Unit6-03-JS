@@ -27,7 +27,7 @@ const getWeather = async (URLAddress) => {
     document.getElementById("api-image").innerHTML =
       '<img src="http://openweathermap.org/img/wn/' +
       jsonData.weather[0].icon +
-      '@2x.png" alt="API image" class="center" width= 40% height 40%' +
+      '@2x.png" alt="API image" class="center" width= 20% height 20%' +
       ">"
 
     tempInKelvin = jsonData.main.temp
